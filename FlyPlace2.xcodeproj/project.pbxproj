@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A8A793F51484967F0078C994 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A793F41484967F0078C994 /* UIKit.framework */; };
+		A8A793F71484967F0078C994 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A793F61484967F0078C994 /* Foundation.framework */; };
+		A8A793F91484967F0078C994 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A793F81484967F0078C994 /* CoreGraphics.framework */; };
+		A8A793FB1484967F0078C994 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A793FA1484967F0078C994 /* CoreData.framework */; };
+		A8A794011484967F0078C994 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8A793FF1484967F0078C994 /* InfoPlist.strings */; };
+		A8A794031484967F0078C994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A794021484967F0078C994 /* main.m */; };
+		A8A794071484967F0078C994 /* FlyPlace2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A794061484967F0078C994 /* FlyPlace2AppDelegate.m */; };
+		A8A7940A1484967F0078C994 /* FlyPlace2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8A794081484967F0078C994 /* FlyPlace2.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A8A793F01484967F0078C994 /* FlyPlace2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyPlace2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8A793F41484967F0078C994 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A8A793F61484967F0078C994 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A8A793F81484967F0078C994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A8A793FA1484967F0078C994 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A8A793FE1484967F0078C994 /* FlyPlace2-Info.plist */ = {isa = PBXFileReference; path = "FlyPlace2-Info.plist"; sourceTree = "<group>"; };
+		A8A794001484967F0078C994 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A8A794021484967F0078C994 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A8A794041484967F0078C994 /* FlyPlace2-Prefix.pch */ = {isa = PBXFileReference; path = "FlyPlace2-Prefix.pch"; sourceTree = "<group>"; };
+		A8A794051484967F0078C994 /* FlyPlace2AppDelegate.h */ = {isa = PBXFileReference; path = FlyPlace2AppDelegate.h; sourceTree = "<group>"; };
+		A8A794061484967F0078C994 /* FlyPlace2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlyPlace2AppDelegate.m; sourceTree = "<group>"; };
+		A8A794091484967F0078C994 /* FlyPlace2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlyPlace2.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A8A793ED1484967F0078C994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8A793F51484967F0078C994 /* UIKit.framework in Frameworks */,
+				A8A793F71484967F0078C994 /* Foundation.framework in Frameworks */,
+				A8A793F91484967F0078C994 /* CoreGraphics.framework in Frameworks */,
+				A8A793FB1484967F0078C994 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A8A793E51484967F0078C994 = {
+			isa = PBXGroup;
+			children = (
+				A8A793FC1484967F0078C994 /* FlyPlace2 */,
+				A8A793F31484967F0078C994 /* Frameworks */,
+				A8A793F11484967F0078C994 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A8A793F11484967F0078C994 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8A793F01484967F0078C994 /* FlyPlace2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A8A793F31484967F0078C994 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8A793F41484967F0078C994 /* UIKit.framework */,
+				A8A793F61484967F0078C994 /* Foundation.framework */,
+				A8A793F81484967F0078C994 /* CoreGraphics.framework */,
+				A8A793FA1484967F0078C994 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8A793FC1484967F0078C994 /* FlyPlace2 */ = {
+			isa = PBXGroup;
+			children = (
+				A8A794051484967F0078C994 /* FlyPlace2AppDelegate.h */,
+				A8A794061484967F0078C994 /* FlyPlace2AppDelegate.m */,
+				A8A794081484967F0078C994 /* FlyPlace2.xcdatamodeld */,
+				A8A793FD1484967F0078C994 /* Supporting Files */,
+			);
+			path = FlyPlace2;
+			sourceTree = "<group>";
+		};
+		A8A793FD1484967F0078C994 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8A793FE1484967F0078C994 /* FlyPlace2-Info.plist */,
+				A8A793FF1484967F0078C994 /* InfoPlist.strings */,
+				A8A794021484967F0078C994 /* main.m */,
+				A8A794041484967F0078C994 /* FlyPlace2-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A8A793EF1484967F0078C994 /* FlyPlace2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8A7940D1484967F0078C994 /* Build configuration list for PBXNativeTarget "FlyPlace2" */;
+			buildPhases = (
+				A8A793EC1484967F0078C994 /* Sources */,
+				A8A793ED1484967F0078C994 /* Frameworks */,
+				A8A793EE1484967F0078C994 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlyPlace2;
+			productName = FlyPlace2;
+			productReference = A8A793F01484967F0078C994 /* FlyPlace2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A8A793E71484967F0078C994 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "waveOcean Software";
+			};
+			buildConfigurationList = A8A793EA1484967F0078C994 /* Build configuration list for PBXProject "FlyPlace2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A8A793E51484967F0078C994;
+			productRefGroup = A8A793F11484967F0078C994 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A8A793EF1484967F0078C994 /* FlyPlace2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A8A793EE1484967F0078C994 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8A794011484967F0078C994 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A8A793EC1484967F0078C994 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8A794031484967F0078C994 /* main.m in Sources */,
+				A8A794071484967F0078C994 /* FlyPlace2AppDelegate.m in Sources */,
+				A8A7940A1484967F0078C994 /* FlyPlace2.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A8A793FF1484967F0078C994 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8A794001484967F0078C994 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A8A7940B1484967F0078C994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A8A7940C1484967F0078C994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A8A7940E1484967F0078C994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlyPlace2/FlyPlace2-Prefix.pch";
+				INFOPLIST_FILE = "FlyPlace2/FlyPlace2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A8A7940F1484967F0078C994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlyPlace2/FlyPlace2-Prefix.pch";
+				INFOPLIST_FILE = "FlyPlace2/FlyPlace2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A8A793EA1484967F0078C994 /* Build configuration list for PBXProject "FlyPlace2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8A7940B1484967F0078C994 /* Debug */,
+				A8A7940C1484967F0078C994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8A7940D1484967F0078C994 /* Build configuration list for PBXNativeTarget "FlyPlace2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8A7940E1484967F0078C994 /* Debug */,
+				A8A7940F1484967F0078C994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A8A794081484967F0078C994 /* FlyPlace2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A8A794091484967F0078C994 /* FlyPlace2.xcdatamodel */,
+			);
+			currentVersion = A8A794091484967F0078C994 /* FlyPlace2.xcdatamodel */;
+			path = FlyPlace2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A8A793E71484967F0078C994 /* Project object */;
+}
