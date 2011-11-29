@@ -7,6 +7,7 @@
 //
 
 #import "FlyPlace2AppDelegate.h"
+#import "PlacesTableViewController.h"
 
 @implementation FlyPlace2AppDelegate
 
@@ -29,6 +30,28 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    PlacesTableViewController *placesTVC = [[PlacesTableViewController alloc] init];
+    placesTVC.title = @"Places";
+//    PhotosTableViewController *recentPhotosTVC = [[RecentlyViewedTableViewController alloc] init];
+//    recentPhotosTVC.title = @"Recently Viewed";
+    
+    UINavigationController *placesNav = [[UINavigationController alloc] init];
+//    UINavigationController *recentNav = [[UINavigationController alloc] init];
+    [placesNav pushViewController:placesTVC animated:NO];
+//    [recentNav pushViewController:recentPhotosTVC animated:NO];
+    
+    UITabBarController *tbc = tbc = [[UITabBarController alloc] init];
+//    tbc.viewControllers = [NSArray arrayWithObjects:placesNav, recentNav, nil];
+    tbc.viewControllers = [NSArray arrayWithObjects:placesNav, nil];
+    
+    [self.window addSubview:tbc.view];
+
+    [placesNav release];
+//    [recentNav release];
+    [placesTVC release];
+//    [recentPhotosTVC release];
+
     [self.window makeKeyAndVisible];
     return YES;
 }

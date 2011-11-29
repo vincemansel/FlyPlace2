@@ -15,6 +15,19 @@
 		A8A794031484967F0078C994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A794021484967F0078C994 /* main.m */; };
 		A8A794071484967F0078C994 /* FlyPlace2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A794061484967F0078C994 /* FlyPlace2AppDelegate.m */; };
 		A8A7940A1484967F0078C994 /* FlyPlace2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8A794081484967F0078C994 /* FlyPlace2.xcdatamodeld */; };
+		A8A79413148497000078C994 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A79412148497000078C994 /* CoreDataTableViewController.m */; };
+		A8A79426148497230078C994 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A79417148497230078C994 /* FlickrFetcher.m */; };
+		A8A79427148497230078C994 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7941B148497230078C994 /* NSObject+SBJSON.m */; };
+		A8A79428148497230078C994 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7941D148497230078C994 /* NSString+SBJSON.m */; };
+		A8A79429148497230078C994 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7941F148497230078C994 /* SBJSON.m */; };
+		A8A7942A148497230078C994 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A79421148497230078C994 /* SBJsonBase.m */; };
+		A8A7942B148497230078C994 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A79423148497230078C994 /* SBJsonParser.m */; };
+		A8A7942C148497230078C994 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A79425148497230078C994 /* SBJsonWriter.m */; };
+		A8A7943B1484A75B0078C994 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7943A1484A75B0078C994 /* Photo.m */; };
+		A8A7943E1484A75C0078C994 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7943D1484A75C0078C994 /* Place.m */; };
+		A8A794411484AB430078C994 /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A794401484AB420078C994 /* PlacesTableViewController.m */; };
+		A8A794461484AF3C0078C994 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A794431484AF3B0078C994 /* PhotoDetailViewController.m */; };
+		A8A794471484AF3C0078C994 /* PhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A794451484AF3B0078C994 /* PhotosTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +36,41 @@
 		A8A793F61484967F0078C994 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A8A793F81484967F0078C994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A8A793FA1484967F0078C994 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		A8A793FE1484967F0078C994 /* FlyPlace2-Info.plist */ = {isa = PBXFileReference; path = "FlyPlace2-Info.plist"; sourceTree = "<group>"; };
+		A8A793FE1484967F0078C994 /* FlyPlace2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlyPlace2-Info.plist"; sourceTree = "<group>"; };
 		A8A794001484967F0078C994 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A8A794021484967F0078C994 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A8A794041484967F0078C994 /* FlyPlace2-Prefix.pch */ = {isa = PBXFileReference; path = "FlyPlace2-Prefix.pch"; sourceTree = "<group>"; };
-		A8A794051484967F0078C994 /* FlyPlace2AppDelegate.h */ = {isa = PBXFileReference; path = FlyPlace2AppDelegate.h; sourceTree = "<group>"; };
+		A8A794041484967F0078C994 /* FlyPlace2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlyPlace2-Prefix.pch"; sourceTree = "<group>"; };
+		A8A794051484967F0078C994 /* FlyPlace2AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlyPlace2AppDelegate.h; sourceTree = "<group>"; };
 		A8A794061484967F0078C994 /* FlyPlace2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlyPlace2AppDelegate.m; sourceTree = "<group>"; };
 		A8A794091484967F0078C994 /* FlyPlace2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlyPlace2.xcdatamodel; sourceTree = "<group>"; };
+		A8A79411148497000078C994 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		A8A79412148497000078C994 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		A8A79415148497230078C994 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		A8A79416148497230078C994 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		A8A79417148497230078C994 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		A8A79419148497230078C994 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		A8A7941A148497230078C994 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		A8A7941B148497230078C994 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		A8A7941C148497230078C994 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		A8A7941D148497230078C994 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		A8A7941E148497230078C994 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		A8A7941F148497230078C994 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		A8A79420148497230078C994 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		A8A79421148497230078C994 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		A8A79422148497230078C994 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		A8A79423148497230078C994 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		A8A79424148497230078C994 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		A8A79425148497230078C994 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		A8A794391484A75B0078C994 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		A8A7943A1484A75B0078C994 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		A8A7943C1484A75C0078C994 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		A8A7943D1484A75C0078C994 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		A8A7943F1484AB420078C994 /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
+		A8A794401484AB420078C994 /* PlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesTableViewController.m; sourceTree = "<group>"; };
+		A8A794421484AF3B0078C994 /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
+		A8A794431484AF3B0078C994 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
+		A8A794441484AF3B0078C994 /* PhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosTableViewController.h; sourceTree = "<group>"; };
+		A8A794451484AF3B0078C994 /* PhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +119,21 @@
 		A8A793FC1484967F0078C994 /* FlyPlace2 */ = {
 			isa = PBXGroup;
 			children = (
+				A8A794421484AF3B0078C994 /* PhotoDetailViewController.h */,
+				A8A794431484AF3B0078C994 /* PhotoDetailViewController.m */,
+				A8A794441484AF3B0078C994 /* PhotosTableViewController.h */,
+				A8A794451484AF3B0078C994 /* PhotosTableViewController.m */,
+				A8A7943F1484AB420078C994 /* PlacesTableViewController.h */,
+				A8A794401484AB420078C994 /* PlacesTableViewController.m */,
+				A8A79414148497230078C994 /* FlickrFetcher */,
+				A8A79410148497000078C994 /* CoreDataTableViewController */,
 				A8A794051484967F0078C994 /* FlyPlace2AppDelegate.h */,
 				A8A794061484967F0078C994 /* FlyPlace2AppDelegate.m */,
 				A8A794081484967F0078C994 /* FlyPlace2.xcdatamodeld */,
+				A8A7943C1484A75C0078C994 /* Place.h */,
+				A8A7943D1484A75C0078C994 /* Place.m */,
+				A8A794391484A75B0078C994 /* Photo.h */,
+				A8A7943A1484A75B0078C994 /* Photo.m */,
 				A8A793FD1484967F0078C994 /* Supporting Files */,
 			);
 			path = FlyPlace2;
@@ -95,6 +148,46 @@
 				A8A794041484967F0078C994 /* FlyPlace2-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8A79410148497000078C994 /* CoreDataTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A8A79411148497000078C994 /* CoreDataTableViewController.h */,
+				A8A79412148497000078C994 /* CoreDataTableViewController.m */,
+			);
+			path = CoreDataTableViewController;
+			sourceTree = "<group>";
+		};
+		A8A79414148497230078C994 /* FlickrFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				A8A79415148497230078C994 /* FlickrAPIKey.h */,
+				A8A79416148497230078C994 /* FlickrFetcher.h */,
+				A8A79417148497230078C994 /* FlickrFetcher.m */,
+				A8A79418148497230078C994 /* JSON */,
+			);
+			path = FlickrFetcher;
+			sourceTree = "<group>";
+		};
+		A8A79418148497230078C994 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A8A79419148497230078C994 /* JSON.h */,
+				A8A7941A148497230078C994 /* NSObject+SBJSON.h */,
+				A8A7941B148497230078C994 /* NSObject+SBJSON.m */,
+				A8A7941C148497230078C994 /* NSString+SBJSON.h */,
+				A8A7941D148497230078C994 /* NSString+SBJSON.m */,
+				A8A7941E148497230078C994 /* SBJSON.h */,
+				A8A7941F148497230078C994 /* SBJSON.m */,
+				A8A79420148497230078C994 /* SBJsonBase.h */,
+				A8A79421148497230078C994 /* SBJsonBase.m */,
+				A8A79422148497230078C994 /* SBJsonParser.h */,
+				A8A79423148497230078C994 /* SBJsonParser.m */,
+				A8A79424148497230078C994 /* SBJsonWriter.h */,
+				A8A79425148497230078C994 /* SBJsonWriter.m */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +255,19 @@
 				A8A794031484967F0078C994 /* main.m in Sources */,
 				A8A794071484967F0078C994 /* FlyPlace2AppDelegate.m in Sources */,
 				A8A7940A1484967F0078C994 /* FlyPlace2.xcdatamodeld in Sources */,
+				A8A79413148497000078C994 /* CoreDataTableViewController.m in Sources */,
+				A8A79426148497230078C994 /* FlickrFetcher.m in Sources */,
+				A8A79427148497230078C994 /* NSObject+SBJSON.m in Sources */,
+				A8A79428148497230078C994 /* NSString+SBJSON.m in Sources */,
+				A8A79429148497230078C994 /* SBJSON.m in Sources */,
+				A8A7942A148497230078C994 /* SBJsonBase.m in Sources */,
+				A8A7942B148497230078C994 /* SBJsonParser.m in Sources */,
+				A8A7942C148497230078C994 /* SBJsonWriter.m in Sources */,
+				A8A7943B1484A75B0078C994 /* Photo.m in Sources */,
+				A8A7943E1484A75C0078C994 /* Place.m in Sources */,
+				A8A794411484AB430078C994 /* PlacesTableViewController.m in Sources */,
+				A8A794461484AF3C0078C994 /* PhotoDetailViewController.m in Sources */,
+				A8A794471484AF3C0078C994 /* PhotosTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
