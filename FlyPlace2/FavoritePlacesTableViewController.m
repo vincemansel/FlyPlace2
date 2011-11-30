@@ -22,7 +22,7 @@
                                                                  ascending:YES
                                                                   selector:@selector(caseInsensitiveCompare:)]];
         
-        request.predicate = nil;
+        request.predicate = [NSPredicate predicateWithFormat:@"favorites.@count != 0"];
         request.fetchBatchSize = 20;
         
         NSFetchedResultsController *frc = [[NSFetchedResultsController alloc]
@@ -44,6 +44,7 @@
 - (void)managedObjectSelected:(NSManagedObject *)managedObject
 {
     Place *place = (Place *)managedObject;
+//    NSLog(@"Favorites: %@", place.favorites);
     FavoritePhotosInAFavoritePlaceTableViewController *fpfptvc =
         [[FavoritePhotosInAFavoritePlaceTableViewController alloc] initWithPlace:place];
     fpfptvc.title = place.name;
