@@ -30,6 +30,7 @@
         photo.title = [flickrData objectForKey:@"title"];
         photo.imageURL = [FlickrFetcher urlStringForPhotoWithFlickrInfo:flickrData format:FlickrFetcherPhotoFormatLarge];
         photo.whereTaken = [Place placeWithName:placeName inManagedObjectContext:context];
+        photo.isFavorite = nil;
     }
     
     return photo;

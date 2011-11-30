@@ -8,6 +8,7 @@
 
 #import "FlyPlace2AppDelegate.h"
 #import "PlacesTableViewController.h"
+#import "FavoritePlacesTableViewController.h"
 
 @implementation FlyPlace2AppDelegate
 
@@ -33,24 +34,32 @@
     
     PlacesTableViewController *placesTVC = [[PlacesTableViewController alloc] init];
     placesTVC.title = @"Places";
+    FavoritePlacesTableViewController *favoritePlacesTVC = [[FavoritePlacesTableViewController alloc] initInManagedObjectContext:self.managedObjectContext];
+    favoritePlacesTVC.title = @"Favorites";
+
     placesTVC.managedObjectContext = self.managedObjectContext;
 //    PhotosTableViewController *recentPhotosTVC = [[RecentlyViewedTableViewController alloc] init];
 //    recentPhotosTVC.title = @"Recently Viewed";
     
     UINavigationController *placesNav = [[UINavigationController alloc] init];
+    UINavigationController *favoritesNav = [[UINavigationController alloc] init];
+    
 //    UINavigationController *recentNav = [[UINavigationController alloc] init];
     [placesNav pushViewController:placesTVC animated:NO];
+    [favoritesNav pushViewController:favoritePlacesTVC animated:NO];
 //    [recentNav pushViewController:recentPhotosTVC animated:NO];
     
     UITabBarController *tbc = tbc = [[UITabBarController alloc] init];
 //    tbc.viewControllers = [NSArray arrayWithObjects:placesNav, recentNav, nil];
-    tbc.viewControllers = [NSArray arrayWithObjects:placesNav, nil];
+    tbc.viewControllers = [NSArray arrayWithObjects:placesNav, favoritesNav, nil];
     
     [self.window addSubview:tbc.view];
 
     [placesNav release];
+    [favoritesNav release];
 //    [recentNav release];
     [placesTVC release];
+    [favoritePlacesTVC release];
 //    [recentPhotosTVC release];
 
     [self.window makeKeyAndVisible];

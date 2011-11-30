@@ -32,6 +32,11 @@
     return place;
 }
 
+- (NSString *)firstLetterOfName
+{
+    return [[self.name substringToIndex:1] capitalizedString];
+}
+
 
 @dynamic name;
 @dynamic photos;

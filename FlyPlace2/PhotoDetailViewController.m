@@ -18,8 +18,6 @@
 
 @implementation PhotoDetailViewController
 
-#define MAX_RECENTLY_VIEWED 25
-
 //@synthesize flickrInfo;
 @synthesize photo;
 @synthesize imageView;
@@ -88,44 +86,21 @@
 
 #pragma mark - View lifecycle
 
-//- (void)storeflickInfoInRecentlyViewedArray:(NSDictionary *)flickrInfoToStore
-//{
-////    NSLog(@"storeflickInfoInRecentlyViewedArray: IN");
-//    NSMutableArray *recentlyViewedArray = [[[NSUserDefaults standardUserDefaults] arrayForKey:@"recentlyViewedArray"] mutableCopy];
-//    if (!recentlyViewedArray) recentlyViewedArray = [[NSMutableArray alloc] init];
-//
-////    NSLog(@"storeflickInfoInRecentlyViewedArray: IN = %@", recentlyViewedArray);
-//    
-//    NSNumber *keyID = [[flickrInfoToStore objectForKey:@"id"] copy];
-////    NSLog(@"storeflickInfoInRecentlyViewedArray: keyID = %@", keyID);
-//    BOOL keyFound = NO;
-//    
-//    for (NSDictionary *storedDictionary in recentlyViewedArray) {
-//        if ([keyID isEqual:[storedDictionary objectForKey:@"id"]]) {
-//            keyFound = YES;
-//            break;
-//        }
-//    }
-//    
-//    if (!keyFound) {
-//        if (recentlyViewedArray.count == MAX_RECENTLY_VIEWED) {
-//            [recentlyViewedArray removeLastObject];
-//        }
-//        [recentlyViewedArray insertObject:flickrInfoToStore atIndex:0];
-//        [[NSUserDefaults standardUserDefaults] setObject:recentlyViewedArray forKey:@"recentlyViewedArray"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-////        NSLog(@"PhotoDetailViewController: storeflickInfoInRecentlyViewedArray: posting Notificaction");
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"storeflickInfoInRecentlyViewedArray" object:self];
-////        NSLog(@"PhotoDetailViewController: storeflickInfoInRecentlyViewedArray: Notification posted");
-//    }
-//    
-////    NSLog(@"storeflickInfoInRecentlyViewedArray: OUT = %@", recentlyViewedArray);
-////    NSLog(@"storeflickInfoInRecentlyViewedArray: OUT");
-//
-//    [recentlyViewedArray release];
-//    [keyID release];
-//    
-//}
+- (UIButton *)buttonWithTitle:(NSString *)title target:(id)target selector:(SEL)inSelector frame:(CGRect)frame image:(UIImage*)image {
+	UIButton *button = [[UIButton alloc] initWithFrame:frame];
+	button.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+	button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+	[button setTitle:title forState:UIControlStateNormal & UIControlStateHighlighted & UIControlStateSelected];
+	[button setTitleColor:[UIColor blackColor] forState:UIControlEventTouchDown];
+	UIImage *newImage = [image stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+	[button setBackgroundImage:newImage forState:UIControlStateNormal];
+	[button addTarget:target action:inSelector forControlEvents:UIControlEventTouchUpInside];
+    button.adjustsImageWhenDisabled = YES;
+    button.adjustsImageWhenHighlighted = YES;
+	[button setBackgroundColor:[UIColor clearColor]];	// in case the parent view draws with a custom color or gradient, use a transparent color
+    [button autorelease];
+    return button;
+}
 
 #define MIN_ZOOM_SCALE 0.1
 #define MAX_ZOOM_SCALE 3.0
@@ -135,26 +110,38 @@
 {    
 //    NSLog(@"PhotoDetailViewController: loadView: IN");
     if (photo) {
-        //    [self startAnimation];
-        
-//        UIImage *image = [UIImage imageWithData:[FlickrFetcher imageDataForPhotoWithFlickrInfo:flickrInfo
-//                                                                                        format:FlickrFetcherPhotoFormatLarge]];
+//        [self startAnimation];
         
         UIImage *image = [UIImage imageWithData:[FlickrFetcher imageDataForPhotoWithURLString:photo.imageURL]];
-
-        //    [self stopAnimation];
         
+//        [self stopAnimation];
+        
+        // setup favorite button
+        
+        UIImage *buttonImage;
+                        
+        if (photo.isFavorite) {
+            favoriteButtonIsSelected = YES;
+            buttonImage = [UIImage imageNamed:@"green_button.png"];
+        }
+        else {
+            favoriteButtonIsSelected = NO;
+            buttonImage = [UIImage imageNamed:@"red_button.png"];
+        }
+        CGRect buttonFrame = CGRectMake(0, 0, buttonImage.size.width+60, buttonImage.size.height-10);
+        favoriteButton = [self buttonWithTitle:@"Favorite" target:self selector:@selector(toggleFavoriteButton:) frame:buttonFrame image:buttonImage];
+
         CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:applicationFrame];
         
         NSString *statBarOrientation;
         CGFloat scale;
         
-        // The iPhone/iPad applicationFrame w and h does not change with interfaceOrientation.
+        // The iPhone/iPad applicationFrame w and h do not change with interfaceOrientation.
         
         switch ([self interfaceOrientation]) {
             case UIInterfaceOrientationPortrait:
-            case UIInterfaceOrientationPortraitUpsideDown:
+            case UIInterfaceOrientationPortraitUpsideDown:      
                 statBarOrientation = @"UIInterfaceOrientationPortrait";
                 if (image.size.width >= image.size.height) {
                     if (image.size.width > applicationFrame.size.width)
@@ -202,14 +189,14 @@
         imageView.image = image;
         
         scrollView.contentSize = image.size;
-        [scrollView addSubview:imageView];
         scrollView.bounces = YES;
         scrollView.bouncesZoom = YES;
         scrollView.minimumZoomScale = MIN_ZOOM_SCALE;
         scrollView.maximumZoomScale = MAX_ZOOM_SCALE;
         scrollView.delegate = self;
         
-//        [self storeflickInfoInRecentlyViewedArray:self.flickrInfo];
+        [scrollView addSubview:imageView];
+        [scrollView addSubview:favoriteButton];
         self.view = scrollView;
     }
     else {
@@ -224,6 +211,18 @@
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return imageView;
+}
+
+- (void)toggleFavoriteButton:(id)sender {
+    if (favoriteButtonIsSelected == YES) {
+        favoriteButtonIsSelected = NO;
+        [favoriteButton setBackgroundImage:[UIImage imageNamed:@"red_button.png"] forState:UIControlStateNormal];
+        self.photo.isFavorite = nil;
+    } else {
+        favoriteButtonIsSelected = YES;
+        [favoriteButton setBackgroundImage:[UIImage imageNamed:@"green_button.png"] forState:UIControlStateNormal];
+        self.photo.isFavorite = self.photo.whereTaken;
+    }    
 }
 
 

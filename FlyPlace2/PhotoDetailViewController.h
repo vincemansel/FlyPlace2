@@ -14,10 +14,15 @@
 //    NSDictionary *flickrInfo;
     Photo *photo;
     UIImageView *imageView;
+    
+    UIButton *favoriteButton;
+    BOOL favoriteButtonIsSelected;
 }
 
 //@property (retain, nonatomic) NSDictionary *flickrInfo;
 @property (retain, nonatomic) Photo *photo;
 @property (retain, nonatomic) UIImageView *imageView;
+
+- (void)toggleFavoriteButton:(id)sender;
 
 @end
