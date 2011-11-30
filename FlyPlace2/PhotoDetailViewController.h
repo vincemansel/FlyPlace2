@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photo.h"
 
 @interface PhotoDetailViewController : UIViewController <UIScrollViewDelegate, UISplitViewControllerDelegate>
 {
-    NSDictionary *flickrInfo;
+//    NSDictionary *flickrInfo;
+    Photo *photo;
     UIImageView *imageView;
 }
 
-@property (retain, nonatomic) NSDictionary *flickrInfo;
+//@property (retain, nonatomic) NSDictionary *flickrInfo;
+@property (retain, nonatomic) Photo *photo;
 @property (retain, nonatomic) UIImageView *imageView;
 
 @end

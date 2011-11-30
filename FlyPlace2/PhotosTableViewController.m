@@ -237,7 +237,9 @@
     photoDetailViewController = [[PhotoDetailViewController alloc] init];
 
     self.photoDetailViewController.title = [[self parsePhotoAtPlace:indexPath] objectForKey:@"title"];
-    self.photoDetailViewController.flickrInfo = [[self.photosAtPlace objectAtIndex:indexPath.row] copy];
+    NSDictionary *flickrInfo = [[self.photosAtPlace objectAtIndex:indexPath.row] copy];
+    self.photoDetailViewController.photo = [Photo photoWithFlickrData:flickrInfo placeWithName:nil inManagedObjectContext:self.managedObjectContext];
+    
     //NSDictionary *place = [self.topPlaces objectAtIndex:indexPath.row];
     //NSLog(@"Location Photos: %@", [FlickrFetcher photosAtPlace:[place objectForKey:@"place_id"]]);
 //    if (self.photoDetailViewController.view.window == nil) {
@@ -250,6 +252,7 @@
     [photosAtPlace release];
     [place release]; //This is a copy. The original info is actually "owned" by the PlacesTableViewController
     [PhotoDetailViewController release];
+    [managedObjectContext release];
     [super dealloc];
 }
 

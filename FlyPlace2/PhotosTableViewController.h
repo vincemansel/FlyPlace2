@@ -23,6 +23,6 @@
 @property (retain, nonatomic) NSDictionary *place;
 @property (readonly) PhotoDetailViewController *photoDetailViewController;
 
-@property (copy) NSManagedObjectContext *managedObjectContext;
+@property (retain) NSManagedObjectContext *managedObjectContext;
 
 @end

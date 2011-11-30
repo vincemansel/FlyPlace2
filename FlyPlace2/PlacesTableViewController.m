@@ -295,9 +295,9 @@
     locationPhotosTVC = [[PhotosTableViewController alloc] init];
     
     self.locationPhotosTVC.title = [[self parseLabel:[self topPlaceAtIndexPath:indexPath]] objectForKey:@"title"];
-    self.locationPhotosTVC.place = [[self topPlaceInfoAtIndexPath:indexPath] copy];
     self.locationPhotosTVC.managedObjectContext = self.managedObjectContext;
-
+    self.locationPhotosTVC.place = [[self topPlaceInfoAtIndexPath:indexPath] copy];
+    
     //NSLog(@"Location Photos: %@", [FlickrFetcher photosAtPlace:[place objectForKey:@"place_id"]]);
 //    if (self.splitViewController) {
 //        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.locationPhotosTVC, self.detailViewController, nil];
@@ -314,6 +314,7 @@
     [topPlaces release];
     [sectionDictionary release];
     [locationPhotosTVC release];
+    [managedObjectContext release];
     [super dealloc];
 }
 

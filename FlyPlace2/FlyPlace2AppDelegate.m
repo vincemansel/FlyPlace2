@@ -33,6 +33,7 @@
     
     PlacesTableViewController *placesTVC = [[PlacesTableViewController alloc] init];
     placesTVC.title = @"Places";
+    placesTVC.managedObjectContext = self.managedObjectContext;
 //    PhotosTableViewController *recentPhotosTVC = [[RecentlyViewedTableViewController alloc] init];
 //    recentPhotosTVC.title = @"Recently Viewed";
     

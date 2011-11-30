@@ -13,7 +13,7 @@
 
 @interface Photo : NSManagedObject
 
-+ (Photo *)photoWithFlickrData:(NSDictionary *)flickrData placeWithName:placeName inManagedObjectContext:(NSManagedObjectContext *)context;
++ (Photo *)photoWithFlickrData:(NSDictionary *)flickrData placeWithName:(NSString *)placeName inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @property (nonatomic, retain) NSString * imageURL;
 @property (nonatomic, retain) NSString * title;

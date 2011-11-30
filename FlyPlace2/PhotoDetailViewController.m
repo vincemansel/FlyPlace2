@@ -20,7 +20,8 @@
 
 #define MAX_RECENTLY_VIEWED 25
 
-@synthesize flickrInfo;
+//@synthesize flickrInfo;
+@synthesize photo;
 @synthesize imageView;
 @synthesize activityIndicator;
 
@@ -87,44 +88,44 @@
 
 #pragma mark - View lifecycle
 
-- (void)storeflickInfoInRecentlyViewedArray:(NSDictionary *)flickrInfoToStore
-{
-//    NSLog(@"storeflickInfoInRecentlyViewedArray: IN");
-    NSMutableArray *recentlyViewedArray = [[[NSUserDefaults standardUserDefaults] arrayForKey:@"recentlyViewedArray"] mutableCopy];
-    if (!recentlyViewedArray) recentlyViewedArray = [[NSMutableArray alloc] init];
-
-//    NSLog(@"storeflickInfoInRecentlyViewedArray: IN = %@", recentlyViewedArray);
-    
-    NSNumber *keyID = [[flickrInfoToStore objectForKey:@"id"] copy];
-//    NSLog(@"storeflickInfoInRecentlyViewedArray: keyID = %@", keyID);
-    BOOL keyFound = NO;
-    
-    for (NSDictionary *storedDictionary in recentlyViewedArray) {
-        if ([keyID isEqual:[storedDictionary objectForKey:@"id"]]) {
-            keyFound = YES;
-            break;
-        }
-    }
-    
-    if (!keyFound) {
-        if (recentlyViewedArray.count == MAX_RECENTLY_VIEWED) {
-            [recentlyViewedArray removeLastObject];
-        }
-        [recentlyViewedArray insertObject:flickrInfoToStore atIndex:0];
-        [[NSUserDefaults standardUserDefaults] setObject:recentlyViewedArray forKey:@"recentlyViewedArray"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-//        NSLog(@"PhotoDetailViewController: storeflickInfoInRecentlyViewedArray: posting Notificaction");
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"storeflickInfoInRecentlyViewedArray" object:self];
-//        NSLog(@"PhotoDetailViewController: storeflickInfoInRecentlyViewedArray: Notification posted");
-    }
-    
-//    NSLog(@"storeflickInfoInRecentlyViewedArray: OUT = %@", recentlyViewedArray);
-//    NSLog(@"storeflickInfoInRecentlyViewedArray: OUT");
-
-    [recentlyViewedArray release];
-    [keyID release];
-    
-}
+//- (void)storeflickInfoInRecentlyViewedArray:(NSDictionary *)flickrInfoToStore
+//{
+////    NSLog(@"storeflickInfoInRecentlyViewedArray: IN");
+//    NSMutableArray *recentlyViewedArray = [[[NSUserDefaults standardUserDefaults] arrayForKey:@"recentlyViewedArray"] mutableCopy];
+//    if (!recentlyViewedArray) recentlyViewedArray = [[NSMutableArray alloc] init];
+//
+////    NSLog(@"storeflickInfoInRecentlyViewedArray: IN = %@", recentlyViewedArray);
+//    
+//    NSNumber *keyID = [[flickrInfoToStore objectForKey:@"id"] copy];
+////    NSLog(@"storeflickInfoInRecentlyViewedArray: keyID = %@", keyID);
+//    BOOL keyFound = NO;
+//    
+//    for (NSDictionary *storedDictionary in recentlyViewedArray) {
+//        if ([keyID isEqual:[storedDictionary objectForKey:@"id"]]) {
+//            keyFound = YES;
+//            break;
+//        }
+//    }
+//    
+//    if (!keyFound) {
+//        if (recentlyViewedArray.count == MAX_RECENTLY_VIEWED) {
+//            [recentlyViewedArray removeLastObject];
+//        }
+//        [recentlyViewedArray insertObject:flickrInfoToStore atIndex:0];
+//        [[NSUserDefaults standardUserDefaults] setObject:recentlyViewedArray forKey:@"recentlyViewedArray"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+////        NSLog(@"PhotoDetailViewController: storeflickInfoInRecentlyViewedArray: posting Notificaction");
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"storeflickInfoInRecentlyViewedArray" object:self];
+////        NSLog(@"PhotoDetailViewController: storeflickInfoInRecentlyViewedArray: Notification posted");
+//    }
+//    
+////    NSLog(@"storeflickInfoInRecentlyViewedArray: OUT = %@", recentlyViewedArray);
+////    NSLog(@"storeflickInfoInRecentlyViewedArray: OUT");
+//
+//    [recentlyViewedArray release];
+//    [keyID release];
+//    
+//}
 
 #define MIN_ZOOM_SCALE 0.1
 #define MAX_ZOOM_SCALE 3.0
@@ -133,11 +134,14 @@
 - (void)loadView
 {    
 //    NSLog(@"PhotoDetailViewController: loadView: IN");
-    if (flickrInfo) {
+    if (photo) {
         //    [self startAnimation];
         
-        UIImage *image = [UIImage imageWithData:[FlickrFetcher imageDataForPhotoWithFlickrInfo:flickrInfo
-                                                                                        format:FlickrFetcherPhotoFormatLarge]];
+//        UIImage *image = [UIImage imageWithData:[FlickrFetcher imageDataForPhotoWithFlickrInfo:flickrInfo
+//                                                                                        format:FlickrFetcherPhotoFormatLarge]];
+        
+        UIImage *image = [UIImage imageWithData:[FlickrFetcher imageDataForPhotoWithURLString:photo.imageURL]];
+
         //    [self stopAnimation];
         
         CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
@@ -205,7 +209,7 @@
         scrollView.maximumZoomScale = MAX_ZOOM_SCALE;
         scrollView.delegate = self;
         
-        [self storeflickInfoInRecentlyViewedArray:self.flickrInfo];
+//        [self storeflickInfoInRecentlyViewedArray:self.flickrInfo];
         self.view = scrollView;
     }
     else {
@@ -248,7 +252,8 @@
 
 - (void)dealloc
 {
-    [flickrInfo release]; //This is a copy. The original info is actually "owned" by the PhotosTableViewController
+//    [flickrInfo release]; //This is a copy. The original info is actually "owned" by the PhotosTableViewController
+    [photo release];
     [imageView release];
     [activityIndicator release];
     [super dealloc];
