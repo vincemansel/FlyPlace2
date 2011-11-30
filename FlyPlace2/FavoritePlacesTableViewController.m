@@ -45,8 +45,13 @@
 {
     Place *place = (Place *)managedObject;
 //    NSLog(@"Favorites: %@", place.favorites);
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isFavorite = %@", place];
+    
     FavoritePhotosInAFavoritePlaceTableViewController *fpfptvc =
-        [[FavoritePhotosInAFavoritePlaceTableViewController alloc] initWithPlace:place];
+        [[FavoritePhotosInAFavoritePlaceTableViewController alloc] initWithPlace:place withSortDescriptor:sortDescriptor withPredicate:predicate];
+    
     fpfptvc.title = place.name;
     [self.navigationController pushViewController:fpfptvc animated:YES];
     [fpfptvc release];

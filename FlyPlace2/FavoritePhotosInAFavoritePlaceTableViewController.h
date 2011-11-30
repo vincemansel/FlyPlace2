@@ -18,6 +18,6 @@
 
 @property (nonatomic, retain) PhotoDetailViewController *photoDetailViewController;
 
-- initWithPlace:(Place *)place;
+- initWithPlace:(Place *)place withSortDescriptor:(NSSortDescriptor *)sortDescriptor withPredicate:(NSPredicate *)predicate;
 
 @end

@@ -13,15 +13,15 @@
 
 @synthesize photoDetailViewController;
 
-- initWithPlace:(Place *)place
+- initWithPlace:(Place *)place withSortDescriptor:(NSSortDescriptor *)sortDescriptor withPredicate:(NSPredicate *)predicate
 {
     if (self = [super initWithStyle:UITableViewStylePlain]) {
         NSManagedObjectContext *context = place.managedObjectContext;
         
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         request.entity = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:context];
-        request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
-        request.predicate = [NSPredicate predicateWithFormat:@"isFavorite = %@", place];
+        request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+        request.predicate = predicate;
         request.fetchBatchSize = 20;
         
         NSFetchedResultsController *frc = [[NSFetchedResultsController alloc]
