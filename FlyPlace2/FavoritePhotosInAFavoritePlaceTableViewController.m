@@ -48,6 +48,7 @@
     self.photoDetailViewController.photo = (Photo *)managedObject;
     
     self.photoDetailViewController.title = self.photoDetailViewController.photo.title;
+    self.photoDetailViewController.managedObjectContext = self.fetchedResultsController.managedObjectContext;
     [self.navigationController pushViewController:self.photoDetailViewController animated:YES];
     NSLog(@"selected photo with title %@", self.photoDetailViewController.title);
 }

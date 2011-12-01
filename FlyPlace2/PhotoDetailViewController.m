@@ -23,6 +23,9 @@
 @synthesize imageView;
 @synthesize activityIndicator;
 
+@synthesize managedObjectContext;
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -200,6 +203,7 @@
         [scrollView addSubview:imageView];
         [scrollView addSubview:favoriteButton];
         self.view = scrollView;
+        [self saveContext];
     }
     else {
 //        NSLog(@"PhotoDetailViewController: loadView: flickrInfo = %@", flickrInfo);
@@ -220,13 +224,33 @@
         favoriteButtonIsSelected = NO;
         [favoriteButton setBackgroundImage:[UIImage imageNamed:@"red_button.png"] forState:UIControlStateNormal];
         self.photo.isFavorite = nil;
+        [self saveContext];
     } else {
         favoriteButtonIsSelected = YES;
         [favoriteButton setBackgroundImage:[UIImage imageNamed:@"green_button.png"] forState:UIControlStateNormal];
         self.photo.isFavorite = self.photo.whereTaken;
+        [self saveContext];
     }    
 }
 
+- (void)saveContext
+{
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContextLocal = self.managedObjectContext;
+    if (managedObjectContextLocal != nil)
+    {
+        if ([managedObjectContextLocal hasChanges] && ![managedObjectContextLocal save:&error])
+        {
+            /*
+             Replace this implementation with code to handle the error appropriately.
+             
+             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+             */
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        } 
+    }
+}
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

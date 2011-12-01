@@ -15,6 +15,8 @@
     Photo *photo;
     UIImageView *imageView;
     
+    NSManagedObjectContext *managedObjectContext;
+    
     UIButton *favoriteButton;
     BOOL favoriteButtonIsSelected;
 }
@@ -23,6 +25,9 @@
 @property (retain, nonatomic) Photo *photo;
 @property (retain, nonatomic) UIImageView *imageView;
 
+@property (retain, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+- (void)saveContext;
 - (void)toggleFavoriteButton:(id)sender;
 
 @end

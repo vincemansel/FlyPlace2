@@ -239,6 +239,7 @@
     self.photoDetailViewController.title = [[self parsePhotoAtPlace:indexPath] objectForKey:@"title"];
     NSDictionary *flickrInfo = [[self.photosAtPlace objectAtIndex:indexPath.row] copy];
     self.photoDetailViewController.photo = [Photo photoWithFlickrData:flickrInfo placeWithName:nil inManagedObjectContext:self.managedObjectContext];
+    self.photoDetailViewController.managedObjectContext = self.managedObjectContext;
     
     //NSDictionary *place = [self.topPlaces objectAtIndex:indexPath.row];
     //NSLog(@"Location Photos: %@", [FlickrFetcher photosAtPlace:[place objectForKey:@"place_id"]]);
