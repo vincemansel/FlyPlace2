@@ -9,6 +9,8 @@
 #import "FlyPlace2AppDelegate.h"
 #import "PlacesTableViewController.h"
 #import "FavoritePlacesTableViewController.h"
+#import "FavoritePhotosInAFavoritePlaceTableViewController.h"
+#import "RecentlyViewedTableViewController.h"
 
 @implementation FlyPlace2AppDelegate
 
@@ -34,33 +36,38 @@
     
     PlacesTableViewController *placesTVC = [[PlacesTableViewController alloc] init];
     placesTVC.title = @"Places";
+    placesTVC.managedObjectContext = self.managedObjectContext;
+
     FavoritePlacesTableViewController *favoritePlacesTVC = [[FavoritePlacesTableViewController alloc] initInManagedObjectContext:self.managedObjectContext];
     favoritePlacesTVC.title = @"Favorites";
 
-    placesTVC.managedObjectContext = self.managedObjectContext;
-//    PhotosTableViewController *recentPhotosTVC = [[RecentlyViewedTableViewController alloc] init];
-//    recentPhotosTVC.title = @"Recently Viewed";
+    Place *recentPlace = [Place placeWithName:@"Recent123" inManagedObjectContext:self.managedObjectContext];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"whenViewed" ascending:NO];
+    
+    RecentlyViewedTableViewController *recentPhotosTVC = [[RecentlyViewedTableViewController alloc] initWithPlace:recentPlace withSortDescriptor:sortDescriptor];
+    
+    recentPhotosTVC.title = @"Recently Viewed";
     
     UINavigationController *placesNav = [[UINavigationController alloc] init];
     UINavigationController *favoritesNav = [[UINavigationController alloc] init];
+    UINavigationController *recentNav = [[UINavigationController alloc] init];
     
-//    UINavigationController *recentNav = [[UINavigationController alloc] init];
     [placesNav pushViewController:placesTVC animated:NO];
     [favoritesNav pushViewController:favoritePlacesTVC animated:NO];
-//    [recentNav pushViewController:recentPhotosTVC animated:NO];
+    [recentNav pushViewController:recentPhotosTVC animated:NO];
     
     UITabBarController *tbc = tbc = [[UITabBarController alloc] init];
-//    tbc.viewControllers = [NSArray arrayWithObjects:placesNav, recentNav, nil];
-    tbc.viewControllers = [NSArray arrayWithObjects:placesNav, favoritesNav, nil];
+    tbc.viewControllers = [NSArray arrayWithObjects:placesNav, favoritesNav, recentNav, nil];
     
     [self.window addSubview:tbc.view];
 
     [placesNav release];
     [favoritesNav release];
-//    [recentNav release];
+    [recentNav release];
+    
     [placesTVC release];
     [favoritePlacesTVC release];
-//    [recentPhotosTVC release];
+    [recentPhotosTVC release];
 
     [self.window makeKeyAndVisible];
     return YES;

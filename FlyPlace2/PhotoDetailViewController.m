@@ -118,10 +118,8 @@
         
         // setup favorite button
         
-        photo.whenViewed = [NSDate dateWithTimeIntervalSinceNow: 2 * 60]; // 120 second expiration for RecentlyViewed
-        //        photo.whenViewed = [NSDate dateWithTimeIntervalSinceNow:48 * 60 * 60]; // 48 hour expiration for RecentlyViewed
+        photo.whenViewed = [NSDate date];
         
-
         UIImage *buttonImage;
                         
         if (photo.isFavorite) {
