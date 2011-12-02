@@ -50,7 +50,7 @@
 - (void)managedObjectSelected:(NSManagedObject *)managedObject
 {
     if (photoDetailViewController) [photoDetailViewController release];
-    photoDetailViewController = [[PhotoDetailViewController alloc] init];
+    photoDetailViewController = [[PhotoXibViewController alloc] init];
     
     self.photoDetailViewController.photo = (Photo *)managedObject;
     

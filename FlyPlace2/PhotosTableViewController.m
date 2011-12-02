@@ -8,7 +8,6 @@
 
 #import "PhotosTableViewController.h"
 #import "FlickrFetcher.h"
-#import "PhotoDetailViewController.h"
 #import "Photo.h"
 
 @interface PhotosTableViewController()
@@ -63,10 +62,10 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (PhotoDetailViewController *)photoDetailViewController
+- (PhotoXibViewController *)photoDetailViewController
 {
     if (!photoDetailViewController)
-        photoDetailViewController = [[PhotoDetailViewController alloc] init];
+        photoDetailViewController = [[PhotoXibViewController alloc] init];
         
     return photoDetailViewController;
 }
@@ -234,7 +233,7 @@
      */
     
     if (photoDetailViewController) [photoDetailViewController release];
-    photoDetailViewController = [[PhotoDetailViewController alloc] init];
+    photoDetailViewController = [[PhotoXibViewController alloc] init];
 
     self.photoDetailViewController.title = [[self parsePhotoAtPlace:indexPath] objectForKey:@"title"];
     NSDictionary *flickrInfo = [[self.photosAtPlace objectAtIndex:indexPath.row] copy];
@@ -252,7 +251,7 @@
     [sections release];
     [photosAtPlace release];
     [place release]; //This is a copy. The original info is actually "owned" by the PlacesTableViewController
-    [PhotoDetailViewController release];
+    [photoDetailViewController release];
     [managedObjectContext release];
     [super dealloc];
 }

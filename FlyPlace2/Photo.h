@@ -22,4 +22,7 @@
 @property (nonatomic, retain) Place *whereTaken;
 @property (nonatomic, retain) Place *isFavorite;
 
+- (void)processImageDataWithBlock:(void (^)(NSData *imageData))processImage;
+
+
 @end

@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "CoreDataTableViewController.h"
 #import "Place.h"
-#import "PhotoDetailViewController.h"
+#import "PhotoXibViewController.h"
 
 @interface RecentlyViewedTableViewController : CoreDataTableViewController
 {
-    PhotoDetailViewController *photoDetailViewController;
+    PhotoXibViewController *photoDetailViewController;
 }
 
-@property (nonatomic, retain) PhotoDetailViewController *photoDetailViewController;
+@property (nonatomic, retain) PhotoXibViewController *photoDetailViewController;
 
 - initWithPlace:(Place *)place withSortDescriptor:(NSSortDescriptor *)sortDescriptor;
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A815A48914885F1000CC71C3 /* PhotoXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A815A48714885F1000CC71C3 /* PhotoXibViewController.m */; };
+		A815A48A14885F1000CC71C3 /* PhotoXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A815A48814885F1000CC71C3 /* PhotoXibViewController.xib */; };
 		A83269D31485E02E00BE4983 /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A83269D11485E02E00BE4983 /* green_button.png */; };
 		A83269D41485E02E00BE4983 /* red_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A83269D21485E02E00BE4983 /* red_button.png */; };
 		A83269DD1485ED6800BE4983 /* FavoritePlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83269DA1485ED6700BE4983 /* FavoritePlacesTableViewController.m */; };
@@ -31,11 +33,13 @@
 		A8A7943B1484A75B0078C994 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7943A1484A75B0078C994 /* Photo.m */; };
 		A8A7943E1484A75C0078C994 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7943D1484A75C0078C994 /* Place.m */; };
 		A8A794411484AB430078C994 /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A794401484AB420078C994 /* PlacesTableViewController.m */; };
-		A8A794461484AF3C0078C994 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A794431484AF3B0078C994 /* PhotoDetailViewController.m */; };
 		A8A794471484AF3C0078C994 /* PhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A794451484AF3B0078C994 /* PhotosTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A815A48614885F1000CC71C3 /* PhotoXibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoXibViewController.h; sourceTree = "<group>"; };
+		A815A48714885F1000CC71C3 /* PhotoXibViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoXibViewController.m; sourceTree = "<group>"; };
+		A815A48814885F1000CC71C3 /* PhotoXibViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoXibViewController.xib; sourceTree = "<group>"; };
 		A83269D11485E02E00BE4983 /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button.png; sourceTree = "<group>"; };
 		A83269D21485E02E00BE4983 /* red_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_button.png; sourceTree = "<group>"; };
 		A83269D91485ED6600BE4983 /* FavoritePlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritePlacesTableViewController.h; sourceTree = "<group>"; };
@@ -80,8 +84,6 @@
 		A8A7943D1484A75C0078C994 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		A8A7943F1484AB420078C994 /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
 		A8A794401484AB420078C994 /* PlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesTableViewController.m; sourceTree = "<group>"; };
-		A8A794421484AF3B0078C994 /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
-		A8A794431484AF3B0078C994 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		A8A794441484AF3B0078C994 /* PhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosTableViewController.h; sourceTree = "<group>"; };
 		A8A794451484AF3B0078C994 /* PhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,8 +140,8 @@
 				A83269DC1485ED6800BE4983 /* FavoritePhotosInAFavoritePlaceTableViewController.m */,
 				A86053C61487026C00778FFD /* RecentlyViewedTableViewController.h */,
 				A86053C71487026C00778FFD /* RecentlyViewedTableViewController.m */,
-				A8A794421484AF3B0078C994 /* PhotoDetailViewController.h */,
-				A8A794431484AF3B0078C994 /* PhotoDetailViewController.m */,
+				A815A48614885F1000CC71C3 /* PhotoXibViewController.h */,
+				A815A48714885F1000CC71C3 /* PhotoXibViewController.m */,
 				A8A794441484AF3B0078C994 /* PhotosTableViewController.h */,
 				A8A794451484AF3B0078C994 /* PhotosTableViewController.m */,
 				A8A7943F1484AB420078C994 /* PlacesTableViewController.h */,
@@ -161,6 +163,7 @@
 		A8A793FD1484967F0078C994 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A815A48814885F1000CC71C3 /* PhotoXibViewController.xib */,
 				A83269D11485E02E00BE4983 /* green_button.png */,
 				A83269D21485E02E00BE4983 /* red_button.png */,
 				A8A793FE1484967F0078C994 /* FlyPlace2-Info.plist */,
@@ -265,6 +268,7 @@
 				A8A794011484967F0078C994 /* InfoPlist.strings in Resources */,
 				A83269D31485E02E00BE4983 /* green_button.png in Resources */,
 				A83269D41485E02E00BE4983 /* red_button.png in Resources */,
+				A815A48A14885F1000CC71C3 /* PhotoXibViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,11 +293,11 @@
 				A8A7943B1484A75B0078C994 /* Photo.m in Sources */,
 				A8A7943E1484A75C0078C994 /* Place.m in Sources */,
 				A8A794411484AB430078C994 /* PlacesTableViewController.m in Sources */,
-				A8A794461484AF3C0078C994 /* PhotoDetailViewController.m in Sources */,
 				A8A794471484AF3C0078C994 /* PhotosTableViewController.m in Sources */,
 				A83269DD1485ED6800BE4983 /* FavoritePlacesTableViewController.m in Sources */,
 				A83269DE1485ED6800BE4983 /* FavoritePhotosInAFavoritePlaceTableViewController.m in Sources */,
 				A86053C81487026C00778FFD /* RecentlyViewedTableViewController.m in Sources */,
+				A815A48914885F1000CC71C3 /* PhotoXibViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

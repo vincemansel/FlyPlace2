@@ -20,7 +20,6 @@
 }
 
 @property (readonly) PhotosTableViewController *locationPhotosTVC;
-@property (retain) PhotoDetailViewController *detailViewController;
 
 @property (retain) NSManagedObjectContext *managedObjectContext;
 

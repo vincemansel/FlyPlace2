@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PhotoDetailViewController.h"
+#import "PhotoXibViewController.h"
 
 @interface PhotosTableViewController : UITableViewController
 {
@@ -15,13 +15,13 @@
     NSMutableArray *photosAtPlace;
     NSArray *sections;
     
-    PhotoDetailViewController *photoDetailViewController;
+    PhotoXibViewController *photoDetailViewController;
     
     NSManagedObjectContext *managedObjectContext;
 }
 
 @property (retain, nonatomic) NSDictionary *place;
-@property (readonly) PhotoDetailViewController *photoDetailViewController;
+@property (readonly) PhotoXibViewController *photoDetailViewController;
 
 @property (retain) NSManagedObjectContext *managedObjectContext;
 

@@ -21,7 +21,6 @@
 @implementation PlacesTableViewController
 
 @synthesize topPlaces, sectionDictionary;
-@synthesize detailViewController;
 
 @synthesize managedObjectContext;
 

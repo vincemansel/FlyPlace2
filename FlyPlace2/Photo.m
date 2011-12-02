@@ -37,6 +37,18 @@
     return photo;
 }
 
+- (void)processImageDataWithBlock:(void (^)(NSData *imageData))processImage
+{
+    dispatch_queue_t callerQueue = dispatch_get_current_queue();
+    dispatch_queue_t downloadQueue = dispatch_queue_create("Flickr download in Photo", NULL);
+    dispatch_async(downloadQueue, ^{
+        NSData *imageData = [FlickrFetcher imageDataForPhotoWithURLString:self.imageURL];
+        dispatch_async(callerQueue, ^{
+            processImage(imageData);
+        });
+    });
+}
+
 @dynamic imageURL;
 @dynamic title;
 @dynamic uniqueId;
